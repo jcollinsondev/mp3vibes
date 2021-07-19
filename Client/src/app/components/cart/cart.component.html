@@ -1,0 +1,10 @@
+<h2>Cart</h2>
+
+<ng-container *ngIf="productList.length > 0">
+    <app-product-list [products]="productList" [cartOptions]="{ remove: true }"></app-product-list>
+    <h3>Total: €{{ total }}</h3>
+</ng-container>
+
+<ng-container *ngIf="productList.length === 0">
+    <p>The cart is empty</p>
+</ng-container>

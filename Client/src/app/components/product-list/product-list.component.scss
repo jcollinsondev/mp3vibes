@@ -1,0 +1,80 @@
+.product {
+    border: 3px solid #f5f5f5;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .4rem;
+
+    &__image {
+        height: 5rem;
+        width: 5rem;
+        border-radius: .2rem;
+    }
+
+    &__body {
+        flex-grow: 1;
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__artist {
+        color: #555555;
+        font-size: small;
+        font-weight: 300;
+    }
+
+    &__price {
+        margin-top: auto;
+        color: #011436;
+        font-weight: 700;
+        font-size: .9em;
+    }
+}
+
+.actions {
+    margin-left: auto;
+}
+
+.cart {
+    margin-left: auto;
+    font-size: .7em;
+    border: none;
+    outline: none;
+    background-color: none;
+    color: #2b2b2b;
+}
+
+.actions {
+    display: flex;
+    align-items: flex-end;
+    gap: .2rem;
+
+    &__buy, &__cart {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: .2em;
+        font-size: .8em;
+
+        & .icon {
+            margin-left: .2rem;
+        }
+    }
+
+    &__buy {
+        color: #20c720;
+    }
+
+    &__cart {
+        color: #eb8d21;
+    }
+}

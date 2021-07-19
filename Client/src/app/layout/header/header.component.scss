@@ -1,0 +1,133 @@
+header {
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 3px solid #555555;
+    background-color: white;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+
+    &__searchbar {
+        margin-left: auto;
+
+        @media only screen and (max-width: 35rem)  {
+            display: none;
+        }
+    }
+
+    &__cart, &__hamburger {
+        border: none;
+        background: none;
+        outline: none;
+        color: #888888;
+        cursor: pointer;
+        font-size: 1.2em;
+        margin-left: 1rem;
+    }
+
+    &__cart {
+        position: relative;
+
+        &[data-cart]:after {
+            content: attr(data-cart);
+            position: absolute;
+            top: 0;
+            right: -.5em;
+            background-color: #eb8d21;
+            font-size: .5em;
+            color: white;
+            border-radius: 50%;
+            height: .8rem;
+            width: .8rem;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 35rem)  {
+            margin-left: auto;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+
+        @media only screen and (max-width: 50rem)  {
+            display: block;
+        }
+    }
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    height: 100%;
+
+    &__item {
+        text-decoration: none;
+        color: #555555;
+        padding: 0 1em;
+        height: 100%;
+
+        &:hover {
+            color: var(--main-color);
+        }
+
+        &.active {
+            color: var(--main-color);
+        }
+    }
+
+    @media only screen and (max-width: 50rem)  {
+        display: none;
+    }
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--main-color);
+    transition: all ease-in-out .4s;
+    padding: 2em;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(100%);
+
+    &.visible {
+        transform: translateX(0);
+    }
+
+    &__close {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        align-self: flex-end;
+    }
+
+    &__body {
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    &__links {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 2em;
+
+        &__item {
+            text-decoration: none;
+            font-size: 2em;
+            color: black;
+        }
+    }
+}

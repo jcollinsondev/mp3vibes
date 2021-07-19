@@ -1,0 +1,4 @@
+<div class="searchbar" (focusin)="focusin()">
+    <input #input [(ngModel)]="searchValue" type="text" class="searchbar__input" placeholder="Search cool music..." (keyup.enter)="search()" />
+    <button class="searchbar__button" (click)="search()"><fa-icon [icon]="icons.faSearch"></fa-icon></button>
+</div>

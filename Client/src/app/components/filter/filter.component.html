@@ -1,0 +1,10 @@
+<button *ngIf="!open" (click)="open = true" class="filter__button"><fa-icon class="icon" [icon]="icons.faFilter"></fa-icon>Use filters</button>
+<button *ngIf="open" (click)="open = false" class="filter__button"><fa-icon class="icon" [icon]="icons.faFilter"></fa-icon>Close filters</button>
+
+<div class="filter" [class.open] = "open">
+    <div class="filter__input">
+        <label for="price">Price</label>
+        <app-range-selector [min]="0" [max]="50" (changes)="setPriceRange($event)"></app-range-selector>
+    </div>
+    <button (click)="apply()" class="filter__button">Apply</button>
+</div>

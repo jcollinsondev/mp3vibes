@@ -1,0 +1,43 @@
+.filter {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+
+    max-height: 0;
+    overflow: hidden;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    transition: max-height ease-in-out .3s;
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+
+        & label {
+            font-weight: 600;
+        }
+    }
+
+    &.open {
+        max-height: 5rem;
+    }
+
+    &__button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+
+        border: 2px solid var(--main-color);
+        border-radius: .4em;
+        padding: .5em 1em;
+
+        & .icon {
+            margin-right: 1rem;
+            color: var(--main-color);
+        }
+    }
+}

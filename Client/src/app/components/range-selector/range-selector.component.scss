@@ -1,0 +1,48 @@
+.selector {
+    width: 10rem;
+    height: .2rem;
+    background-color: #f5f5f5;
+    position: relative;
+    display: inline-block;
+
+    transform: translateY(-.2rem);
+    
+    &__range {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: var(--main-color);
+    }
+
+    &__min, &__max {
+        position: absolute;
+        height: .8rem;
+        width: .8rem;
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        top: -.3rem;
+        background-color: #888888;
+    }
+
+    &__min {
+        left: 0;
+    }
+
+    &__max {
+        right: 0;
+    }
+}
+
+.range__label {
+    display: inline-block;
+    width: 2rem;
+
+    &.right {
+        text-align: right;
+    }
+}

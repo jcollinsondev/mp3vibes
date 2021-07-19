@@ -1,0 +1,11 @@
+<h2>Files</h2>
+
+<app-filter></app-filter>
+
+<ng-container *ngIf="productList.length > 0">
+    <app-product-list [products]="productList" [cartOptions]="{ add: true }"></app-product-list>
+</ng-container>
+
+<ng-container *ngIf="productList.length === 0">
+    <p>Sorry.. we couldn't find no file with these characteristics</p>
+</ng-container>

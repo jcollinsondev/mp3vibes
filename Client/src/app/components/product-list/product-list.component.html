@@ -1,0 +1,18 @@
+<ng-container *ngFor="let item of products">
+    <div class="product">
+        <div class="product__body">
+            <img class="product__image" [src]="'https://picsum.photos/200/300?random=' + item.product.id" alt="cover">
+            <div class="description">
+                <span class="description__title">{{ item.product.title }}</span>
+                <span class="description__artist">{{ item.product.title }}</span>
+                <span class="description__price">€{{ formatPrice(item.product.price) }}</span>
+            </div>
+        </div>
+    
+        <div class="actions">
+            <!--<button class="actions__buy">Buy now <fa-icon class="icon" [icon]="icons.faDollarSign"></fa-icon></button>-->
+            <button *ngIf="cartOptions.add" (click)="addToCart(item)" class="actions__cart">Add to cart<fa-icon class="icon" [icon]="icons.faShoppingCart"></fa-icon></button>
+            <button *ngIf="cartOptions.remove" (click)="removeFromCart(item)" class="actions__cart">Remove from cart<fa-icon class="icon" [icon]="icons.faShoppingCart"></fa-icon></button>
+        </div>
+    </div>    
+</ng-container>
